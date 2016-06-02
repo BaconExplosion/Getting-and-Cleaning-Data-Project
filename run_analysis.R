@@ -70,5 +70,6 @@ merged.selected <- merged.activity[ , c(1, 2, mean.index)]
 
 melted <- melt(merged.selected, id = c("subject", "activity"))
 casted <- dcast(melted, subject + activity ~ variable, mean)
-show(casted)
+write.table(casted, file = "cleaned_project.txt", row.names = FALSE)
+print("complete")
 
